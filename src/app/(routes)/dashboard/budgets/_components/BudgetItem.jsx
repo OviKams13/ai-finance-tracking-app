@@ -1,9 +1,11 @@
 import React from "react";
+import Link from "next/link";
 
 function BudgetItem({ budget }) {
   
     
   return (
+    <Link href={"/dashboard/expenses/" + budget?.id}>
       <div
         className="p-5 border rounded-2xl
     hover:shadow-md cursor-pointer h-[170px]"
@@ -46,6 +48,7 @@ function BudgetItem({ budget }) {
           </div>
         </div>
       </div>
+      </Link>
   );
 }
 

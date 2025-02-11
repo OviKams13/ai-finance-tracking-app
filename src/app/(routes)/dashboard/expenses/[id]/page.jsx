@@ -4,6 +4,9 @@ import { Budgets, Expenses } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
 import React, { useEffect, useState } from "react";
+import AddExpense from "../_components/AddExpense";
+import BudgetItem from "../../budgets/_components/BudgetItem";
+
 
 function ExpensesScreen({ params }) {
     const { user } = useUser();
@@ -37,6 +40,11 @@ function ExpensesScreen({ params }) {
               <div className='h-[150px] w-full bg-slate-200 rounded-lg animate-pulse'>
               </div>
             }
+            <AddExpense
+          budgetId={params.id}
+          user={user}
+          refreshData={() => getBudgetInfo()}
+        />
           </div>
         </div>
       );

@@ -41,7 +41,7 @@ function SideNav() {
       }, [path]);
 
   return (
-    <div className='h-screen p-5 border shadow-sm'>SideNav
+    <div className='h-screen p-5 border shadow-sm'>
     <Image
               src={"/logo.svg"} // Logo stored in the public folder
               alt="Logo"
